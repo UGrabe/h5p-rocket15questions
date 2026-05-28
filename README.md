@@ -25,4 +25,4 @@ See the quick guides above for step-by-step instructions for both Moodle Core H5
 
 ## License
 
-Unofficial, freely available. Not affiliated with H5P Group.
+licensed under the [GNU General Public License v3 or later](https://www.gnu.org/licenses/gpl-3.0.html). Not affiliated with H5P Group.
