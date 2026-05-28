@@ -1,0 +1,25 @@
+{
+  "title": "Rocket 15 Questions",
+  "language": "de",
+  "defaultLanguage": "de",
+  "license": "U",
+  "embedTypes": [
+    "iframe"
+  ],
+  "authors": [
+    {
+      "name": "Unknown",
+      "role": "Author"
+    }
+  ],
+  "mainLibrary": "H5P.RocketPickPic",
+  "reportingScore": true,
+  "preloadedDependencies": [
+    {
+      "machineName": "H5P.RocketPickPic",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
+  ],
+  "description": "Lernende wählen eine Grafik und beantworten Fragen. Mit jeder richtigen Antwort entsteht ein Teil der Grafik – nach 15 richtigen Antworten startet eine Abschlussanimation. Geeignet für Vokabeln, Mathe, Sachwissen und mehr."
+}

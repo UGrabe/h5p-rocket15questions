@@ -1,0 +1,223 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   H5P RocketPickPic – Editor-Widget
+   Strukturelles CSS (rqe-*): Tabs, Karten, Layout.
+   Inputs/Selects: kein eigenes Styling → H5P-globales CSS greift.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Infobox */
+.rqe-info-box {
+  background: #e8f4f8;
+  border-left: 4px solid #1a73e8;
+  border-radius: 2px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #174ea6;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* ── Tabs ──────────────────────────────────────────────────────────────── */
+.rqe-tabs {
+  display: flex;
+  border-bottom: 2px solid #d0d0d0;
+  margin-bottom: 16px;
+}
+
+.rqe-tab {
+  padding: 7px 20px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: -2px;
+  transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.rqe-tab:hover { background: #e8e8e8; color: #333; }
+
+.rqe-tab.rqe-tab-active {
+  background: #fff;
+  border-color: #d0d0d0;
+  color: #1a73e8;
+  font-weight: 600;
+}
+
+/* ── Fragenliste ───────────────────────────────────────────────────────── */
+.rqe-question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.rqe-item {
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.rqe-item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #d0d0d0;
+  border-radius: 3px 3px 0 0;
+}
+
+.rqe-item-num {
+  font-weight: 600;
+  font-size: 13px;
+  color: #333;
+  flex: 0 0 auto;
+}
+
+/* Typ-Auswahl im Header: kein eigenes Styling, H5P-CSS übernimmt */
+.rqe-type-sel { flex: 1; }
+
+/* ── Felder ────────────────────────────────────────────────────────────── */
+.rqe-fields {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rqe-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rqe-field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+}
+
+.rqe-field-hint {
+  font-size: 11px;
+  font-weight: normal;
+  color: #888;
+  margin-left: 6px;
+}
+
+/* Inputs: kein eigenes Styling, H5P-CSS übernimmt.
+   Nur width:100% damit sie den verfügbaren Platz füllen. */
+.rqe-inp { width: 100%; box-sizing: border-box; }
+
+/* ── SC Antwortliste ───────────────────────────────────────────────────── */
+.rqe-ans-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rqe-ans-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rqe-ans-row .rqe-inp { flex: 1; width: auto; }
+
+/* ✓-Badge für die erste (richtige) Antwort */
+.rqe-ans-badge {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.rqe-ans-badge-empty {
+  background: #e0e0e0;
+  color: transparent;
+}
+
+/* ── TF Radio-Buttons ──────────────────────────────────────────────────── */
+.rqe-tf-row { display: flex; gap: 20px; }
+
+.rqe-radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────── */
+.rqe-btn {
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  color: #333;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.rqe-btn:hover { background: #f5f5f5; border-color: #aaa; }
+
+.rqe-icon-btn {
+  padding: 4px 9px;
+  color: #999;
+  border-color: #ddd;
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.rqe-icon-btn:hover { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+
+.rqe-add-btn { border-color: #1a73e8; color: #1a73e8; margin-top: 4px; }
+.rqe-add-btn:hover { background: #1a73e8; color: #fff; }
+
+.rqe-add-ans {
+  align-self: flex-start;
+  font-size: 12px;
+  padding: 4px 10px;
+  color: #1a73e8;
+  border-color: #1a73e8;
+  margin-top: 4px;
+}
+.rqe-add-ans:hover { background: #1a73e8; color: #fff; }
+
+/* ── Texteingabe-Panel ─────────────────────────────────────────────────── */
+.rqe-hint {
+  font-size: 12px;
+  color: #666;
+  margin: 0 0 10px;
+  line-height: 1.7;
+  padding: 8px 12px;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+}
+
+/* Textarea: nur Monospace und Mindesthöhe, Rest H5P */
+.rqe-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', 'Courier New', monospace;
+  font-size: 13px;
+  resize: vertical;
+  min-height: 280px;
+}

@@ -1,0 +1,222 @@
+[
+  {
+    "name": "graphics",
+    "type": "group",
+    "label": "Verfügbare Grafiken",
+    "importance": "high",
+    "fields": [
+      {
+        "name": "enableRocket",
+        "type": "boolean",
+        "label": "Rakete",
+        "description": "Die Lernenden wählen vor dem Spielstart eine der von Ihnen zur Verfügung gestellten Grafiken aus. Aktivieren Sie mindestens eine. Standardmäßig sind alle ausgewählt.",
+        "default": true,
+        "importance": "medium"
+      },
+      {
+        "name": "enableButterfly",
+        "type": "boolean",
+        "label": "Schmetterling",
+        "default": true,
+        "importance": "medium"
+      },
+      {
+        "name": "enableOwl",
+        "type": "boolean",
+        "label": "Eule",
+        "default": true,
+        "importance": "medium"
+      },
+      {
+        "name": "enableIcecream",
+        "type": "boolean",
+        "label": "Eistüte",
+        "default": true,
+        "importance": "medium"
+      }
+    ]
+  },
+  {
+    "name": "shuffleQuestions",
+    "type": "boolean",
+    "label": "Fragen zufällig mischen",
+    "description": "Wenn aktiviert, werden Fragen in zufälliger Reihenfolge aus dem Pool gezogen. Wenn deaktiviert, werden sie in der eingegebenen Reihenfolge gestellt.",
+    "default": true,
+    "importance": "medium"
+  },
+  {
+    "name": "showRetryButton",
+    "type": "boolean",
+    "label": "Wiederholen-Button anzeigen",
+    "description": "Lernende können das Spiel nach dem Ende neu starten und dabei eine neue Grafik auswählen.",
+    "default": true,
+    "importance": "low"
+  },
+  {
+    "name": "showSolutionButton",
+    "type": "boolean",
+    "label": "Lösung-anzeigen-Button anzeigen",
+    "description": "Lernende sehen am Ende alle gestellten Fragen mit ihren eigenen und den richtigen Antworten.",
+    "default": false,
+    "importance": "low"
+  },
+  {
+    "name": "questionsData",
+    "type": "text",
+    "widget": "rocketQuizEditor",
+    "label": "Fragen",
+    "optional": true,
+    "default": "",
+    "importance": "high"
+  },
+  {
+    "name": "l10n",
+    "type": "group",
+    "common": true,
+    "label": "Texte (optional anpassen)",
+    "fields": [
+      {
+        "name": "chooseGraphic",
+        "type": "text",
+        "label": "Aufforderung zur Grafikauswahl (wird den Lernenden beim Start angezeigt)",
+        "default": "Was möchtest du heute bauen?",
+        "importance": "low"
+      },
+      {
+        "name": "rocketLabel",
+        "type": "text",
+        "label": "Bezeichnung Grafik: Rakete",
+        "default": "Rakete",
+        "importance": "low"
+      },
+      {
+        "name": "butterflyLabel",
+        "type": "text",
+        "label": "Bezeichnung Grafik: Schmetterling",
+        "default": "Schmetterling",
+        "importance": "low"
+      },
+      {
+        "name": "owlLabel",
+        "type": "text",
+        "label": "Bezeichnung Grafik: Eule",
+        "default": "Eule",
+        "importance": "low"
+      },
+      {
+        "name": "icecreamLabel",
+        "type": "text",
+        "label": "Bezeichnung Grafik: Eistüte",
+        "default": "Eistüte",
+        "importance": "low"
+      },
+      {
+        "name": "submitButton",
+        "type": "text",
+        "label": "Beschriftung Absenden-Button",
+        "default": "Antworten",
+        "importance": "low"
+      },
+      {
+        "name": "correctFeedback",
+        "type": "text",
+        "label": "Feedback bei richtiger Antwort",
+        "description": "Mehrere Texte möglich: durch | trennen (AltGr + <>), dann wird zufällig einer gewählt. Beispiel: Super!|Toll gemacht!|Weiter so!",
+        "default": "Richtig! Ein Teil wird gezeichnet.",
+        "importance": "low"
+      },
+      {
+        "name": "lastCorrectFeedback",
+        "type": "text",
+        "label": "Feedback bei der 15. richtigen Antwort (Grafik vollständig)",
+        "default": "Fertig!",
+        "importance": "low"
+      },
+      {
+        "name": "wrongFeedback",
+        "type": "text",
+        "label": "Ermutigungstexte bei falscher Antwort",
+        "description": "Mehrere Texte durch | trennen (AltGr + <>), z. B.: Weiter so!|Nicht aufgeben! — einer wird zufällig gewählt.",
+        "default": "Nicht ganz – aber nicht aufgeben!|Fast! Die nächste Frage kommt.|Das war knapp. Bleib dran!|Noch nicht – du schaffst das!|Weiter!",
+        "importance": "low"
+      },
+      {
+        "name": "successMessage",
+        "type": "text",
+        "label": "Erfolgsmeldung (wird angezeigt wenn die Animation startet)",
+        "default": "Fantastisch!",
+        "importance": "low"
+      },
+      {
+        "name": "poolExhaustedMessage",
+        "type": "text",
+        "label": "Meldung, wenn nicht genug Fragen vorhanden sind (weniger als 15 richtige Antworten möglich)",
+        "default": "Keine weiteren Fragen vorhanden – aber gut gemacht!",
+        "importance": "low"
+      },
+      {
+        "name": "trueLabel",
+        "type": "text",
+        "label": "Beschriftung 'Wahr'-Button",
+        "default": "Wahr",
+        "importance": "low"
+      },
+      {
+        "name": "falseLabel",
+        "type": "text",
+        "label": "Beschriftung 'Falsch'-Button",
+        "default": "Falsch",
+        "importance": "low"
+      },
+      {
+        "name": "answerPlaceholder",
+        "type": "text",
+        "label": "Platzhaltertext im Kurzantwort-Eingabefeld",
+        "default": "Antwort eingeben …",
+        "importance": "low"
+      },
+      {
+        "name": "retryButton",
+        "type": "text",
+        "label": "Beschriftung Wiederholen-Button",
+        "default": "Nochmal spielen",
+        "importance": "low"
+      },
+      {
+        "name": "solutionButton",
+        "type": "text",
+        "label": "Beschriftung Lösung-anzeigen-Button",
+        "default": "Lösung anzeigen",
+        "importance": "low"
+      },
+      {
+        "name": "solutionTitle",
+        "type": "text",
+        "label": "Überschrift der Lösungsansicht",
+        "default": "Richtige Antworten",
+        "importance": "low"
+      },
+      {
+        "name": "yourAnswerLabel",
+        "type": "text",
+        "label": "Beschriftung 'Deine Antwort' (in der Anzeige der Lösungen)",
+        "default": "Deine Antwort:",
+        "importance": "low"
+      },
+      {
+        "name": "correctAnswerLabel",
+        "type": "text",
+        "label": "Beschriftung 'Richtige Antwort' (in der Anzeige der Lösungen)",
+        "default": "Richtige Antwort:",
+        "importance": "low"
+      },
+      {
+        "name": "backButton",
+        "type": "text",
+        "label": "Beschriftung Zurück-Button (in der Anzeige der Lösungen)",
+        "default": "Zurück",
+        "importance": "low"
+      }
+    ]
+  }
+]

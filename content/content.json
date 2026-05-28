@@ -1,0 +1,34 @@
+{
+  "graphics": {
+    "enableRocket": true,
+    "enableButterfly": true,
+    "enableOwl": true,
+    "enableIcecream": true
+  },
+  "shuffleQuestions": true,
+  "showRetryButton": true,
+  "showSolutionButton": false,
+  "questionsData": "SC|Welche Jahreszeit folgt auf den Winter?|Frühling*|Herbst|Sommer\nSC|Was ist das Ergebnis von 8 × 7?|56*|54|48|63\nSC|Welches Tier ist das größte Landtier der Welt?|Elefant*|Giraffe|Nashorn|Nilpferd\nSC|In welchem Kontinent liegt Ägypten?|Afrika*|Asien|Europa|Australien\nSC|Welche Farbe entsteht, wenn man Blau und Gelb mischt?|Grün*|Orange|Lila|Braun\nSC|Was ergibt 100 − 37?|63*|53|73|47\nSC|Wie viele Monate hat ein Jahr?|12*|10|11|13\nSC|Wie viele Tage hat eine Woche?|7*|5|6|8\nTF|Die Erde dreht sich um die Sonne.|wahr\nTF|Wale sind Fische.|falsch\nTF|Berlin ist die Hauptstadt von Deutschland.|wahr\nTF|Der Mond ist ein Planet.|falsch\nTF|Spinnen haben sechs Beine.|falsch\nTF|Haie sind Säugetiere.|falsch\nTF|Der Äquator teilt die Erde in Nord- und Südhalbkugel.|wahr\nKA|Wie viel ist 9 × 9?|81\nKA|Die Hauptstadt von Frankreich ist ___.|Paris\nKA|H₂O ist die chemische Formel für ___.|Wasser\nKA|Ein Rechteck mit den Seiten 4 cm und 6 cm hat einen Umfang von ___ cm.|20\nKA|Wie viele Ecken hat ein Würfel?|8",
+  "l10n": {
+    "chooseGraphic": "Was möchtest du heute bauen?",
+    "rocketLabel": "Rakete",
+    "butterflyLabel": "Schmetterling",
+    "owlLabel": "Eule",
+    "icecreamLabel": "Eistüte",
+    "submitButton": "Antworten",
+    "correctFeedback": "Richtig! Ein Teil wird gezeichnet.",
+    "lastCorrectFeedback": "Fertig!",
+    "wrongFeedback": "Nicht ganz – aber nicht aufgeben!|Fast! Die nächste Frage kommt.|Das war knapp. Bleib dran!|Noch nicht – du schaffst das!|Weiter!",
+    "successMessage": "Fantastisch!",
+    "poolExhaustedMessage": "Keine weiteren Fragen vorhanden – aber gut gemacht!",
+    "trueLabel": "Wahr",
+    "falseLabel": "Falsch",
+    "answerPlaceholder": "Antwort eingeben …",
+    "retryButton": "Nochmal spielen",
+    "solutionButton": "Lösung anzeigen",
+    "solutionTitle": "Richtige Antworten",
+    "yourAnswerLabel": "Deine Antwort:",
+    "correctAnswerLabel": "Richtige Antwort:",
+    "backButton": "Zurück"
+  }
+}

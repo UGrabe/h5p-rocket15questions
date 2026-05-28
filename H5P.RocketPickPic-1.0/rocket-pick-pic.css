@@ -1,0 +1,598 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   H5P Rocket Pick Pic – Styles
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.h5p-rocket-pick-pic {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* ── Auswahlscreen ───────────────────────────────────────────────────────── */
+
+.rpp-select-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  gap: 28px;
+}
+
+.rpp-select-title {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #1a1a2e;
+  text-align: center;
+}
+
+.rpp-select-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.rpp-select-btn {
+  padding: 14px 32px;
+  font-size: 1.1em;
+  font-weight: 600;
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.1s;
+  min-width: 140px;
+}
+
+.rpp-select-btn:hover {
+  background: #1a6fa8;
+  transform: translateY(-2px);
+}
+
+.rpp-select-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Spiel-Layout ────────────────────────────────────────────────────────── */
+
+.h5p-rocket-pick-pic .rpp-game {
+  display: flex;
+}
+
+.h5p-rocket-pick-pic {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 28px;
+  min-height: 380px;
+}
+
+.rpp-graphic-col {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* SVG-Container: feste Größe, SVG skaliert per preserveAspectRatio */
+.rpp-svg-wrap {
+  width: 220px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rpp-svg-wrap.rpp-launch,
+.rpp-svg-wrap.rpp-flutter {
+  overflow: visible;
+}
+
+.rpp-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Teile: unsichtbar bis freigeschaltet */
+.rpp-part {
+  stroke: #2c3e50;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.rpp-part.rpp-visible {
+  opacity: 1;
+}
+
+/* ── Raketen-Animation ───────────────────────────────────────────────────── */
+
+.rpp-launch .rpp-svg {
+  animation: rppLaunch 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes rppLaunch {
+  0%   { transform: translateY(0)      scale(1);    opacity: 1; }
+  12%  { transform: translateY(12px)   scale(0.99); opacity: 1; }
+  100% { transform: translateY(-420px) scale(0.5);  opacity: 0; }
+}
+
+/* ── Schmetterlings-Animation ────────────────────────────────────────────── */
+
+.rpp-flutter .rpp-svg {
+  animation: rppFlutter 2.8s ease-in-out forwards;
+}
+
+@keyframes rppFlutter {
+  0%   { transform: translateY(0)   rotate(0deg)   scale(1);    opacity: 1; }
+  15%  { transform: translateY(-12px) rotate(-3deg) scale(1.04); opacity: 1; }
+  30%  { transform: translateY(-4px)  rotate(2deg)  scale(0.98); opacity: 1; }
+  50%  { transform: translateY(-20px) rotate(-4deg) scale(1.05); opacity: 1; }
+  100% { transform: translateY(-380px) rotate(8deg) scale(0.5);  opacity: 0; }
+}
+
+/* ── Fortschritt ─────────────────────────────────────────────────────────── */
+
+.rpp-progress {
+  width: 100%;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.rpp-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #27ae60;
+  border-radius: 5px;
+  transition: width 0.45s ease;
+}
+
+.rpp-progress-text {
+  font-size: 12px;
+  color: #777;
+}
+
+/* ── Fragen-Spalte ───────────────────────────────────────────────────────── */
+
+.rpp-question-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.rpp-question-text {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #1a1a2e;
+  line-height: 1.45;
+}
+
+.rpp-answer-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rpp-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 2px solid #dce1e7;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1.35;
+  transition: background 0.15s, border-color 0.15s;
+  user-select: none;
+}
+
+.rpp-option:hover {
+  background: #f0f4f8;
+  border-color: #b0bec5;
+}
+
+.rpp-option input[type="radio"] {
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: #2980b9;
+}
+
+.rpp-short-input {
+  padding: 10px 14px;
+  font-size: 1em;
+  border: 2px solid #dce1e7;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.rpp-short-input:focus { border-color: #2980b9; }
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+
+.rpp-submit {
+  align-self: flex-start;
+  padding: 10px 22px;
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.rpp-submit:hover:not(:disabled) { background: #1a6fa8; }
+.rpp-submit:disabled { background: #90bcd9; cursor: default; }
+
+.rpp-feedback {
+  font-size: 0.95em;
+  min-height: 1.4em;
+  font-style: italic;
+  color: #555;
+}
+
+.rpp-feedback.rpp-correct { color: #27ae60; }
+.rpp-feedback.rpp-wrong   { color: #c0392b; }
+
+.rpp-end-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rpp-retry-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  background: #27ae60;
+  color: #fff;
+  transition: background 0.2s;
+}
+.rpp-retry-btn:hover { background: #1e8449; }
+
+.rpp-solution-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  background: #2980b9;
+  color: #fff;
+  transition: background 0.2s;
+}
+.rpp-solution-btn:hover { background: #1a6fa8; }
+
+.rpp-back-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  background: #7f8c8d;
+  color: #fff;
+  transition: background 0.2s;
+}
+.rpp-back-btn:hover { background: #636e72; }
+
+/* ── Lösungsansicht ──────────────────────────────────────────────────────── */
+
+.rpp-solution-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #1a1a2e;
+  border-bottom: 2px solid #dce1e7;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+}
+
+.rpp-solution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rpp-solution-item {
+  padding: 8px 0 8px 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.rpp-sol-correct { border-left: 3px solid #27ae60; }
+.rpp-sol-wrong   { border-left: 3px solid #c0392b; }
+
+.rpp-solution-question { font-size: 0.95em; color: #333; }
+
+.rpp-solution-answer {
+  font-size: 0.95em;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.rpp-answer-correct { color: #27ae60; }
+.rpp-answer-wrong   { color: #c0392b; }
+
+.rpp-sol-label {
+  font-weight: normal;
+  color: #777;
+  font-size: 0.88em;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 560px) {
+  .h5p-rocket-pick-pic {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .rpp-graphic-col {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  .rpp-svg-wrap {
+    width: 120px;
+    height: 160px;
+    flex-shrink: 0;
+  }
+}
+
+/* ── Editor-Widget-Styles (rqe-*) ────────────────────────────────────────── */
+
+.rqe-widget { font-family: sans-serif; font-size: 14px; color: #333; }
+
+.rqe-tabs {
+  display: flex;
+  border-bottom: 2px solid #d0d0d0;
+  margin-bottom: 16px;
+}
+
+.rqe-tab {
+  padding: 8px 18px;
+  border: 2px solid transparent;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: -2px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.rqe-tab:hover { background: #e8e8e8; color: #333; }
+
+.rqe-tab.rqe-tab-active {
+  background: #fff;
+  border-color: #d0d0d0;
+  color: #1a1a2e;
+  font-weight: 600;
+}
+
+.rqe-question-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px; }
+
+.rqe-item { border: 1px solid #d8d8d8; border-radius: 6px; overflow: hidden; background: #fafafa; }
+
+.rqe-item-header {
+  display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+  background: #e8f0fe; border-bottom: 1px solid #c5d3f0;
+}
+
+.rqe-item-num { font-weight: 600; flex: 0 0 auto; font-size: 13px; color: #1a56db; }
+
+.rqe-type-sel { flex: 1; padding: 4px 8px; border: 1px solid #c5d3f0; border-radius: 4px; font-size: 13px; background: #fff; }
+
+.rqe-fields { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+
+.rqe-row { display: flex; align-items: center; gap: 10px; }
+
+.rqe-lbl { flex: 0 0 130px; font-size: 13px; color: #555; }
+.rqe-lbl small { font-size: 11px; color: #888; }
+
+.rqe-inp { flex: 1; padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; box-sizing: border-box; }
+.rqe-inp:focus { outline: none; border-color: #1a56db; }
+
+.rqe-answers { display: flex; flex-direction: column; gap: 6px; }
+.rqe-ans-list { display: flex; flex-direction: column; gap: 5px; }
+.rqe-ans-row { display: flex; align-items: center; gap: 8px; }
+.rqe-ans-row .rqe-inp { flex: 1; }
+
+.rqe-radio { display: inline-flex; align-items: center; gap: 5px; margin-right: 16px; font-size: 13px; cursor: pointer; }
+
+.rqe-btn { padding: 5px 12px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; font-size: 13px; white-space: nowrap; }
+.rqe-btn:hover { background: #f0f0f0; }
+.rqe-icon-btn { padding: 4px 9px; color: #999; border-color: #ddd; font-size: 15px; line-height: 1; }
+.rqe-icon-btn:hover { background: #ffe5e5; color: #c0392b; border-color: #c0392b; }
+.rqe-add-btn { border-color: #1a56db; color: #1a56db; }
+.rqe-add-btn:hover { background: #1a56db; color: #fff; }
+.rqe-add-ans { align-self: flex-start; font-size: 12px; padding: 4px 10px; color: #1a56db; border-color: #1a56db; }
+.rqe-add-ans:hover { background: #1a56db; color: #fff; }
+
+.rqe-hint { font-size: 12px; color: #666; margin: 0 0 10px; line-height: 1.6; }
+
+.rqe-textarea {
+  width: 100%; box-sizing: border-box; padding: 10px 12px;
+  border: 1px solid #ccc; border-radius: 4px; font-size: 13px;
+  font-family: monospace; resize: vertical; line-height: 1.7; color: #333;
+}
+.rqe-textarea:focus { outline: none; border-color: #1a56db; }
+.rqe-textarea::placeholder { color: #b0b0b0; }
+
+/* ── Eule: dünnere Linien (kleinere ViewBox 100×100) ─────────────────────── */
+
+.rpp-svg[viewBox="0 0 100 100"] .rpp-part,
+.rpp-svg[viewBox="0 0 100 100"] .rpp-anim-part {
+  stroke-width: 0.7;
+}
+
+/* ── Eule: Animations-Elemente (unsichtbar bis Animation) ─────────────────── */
+
+.rpp-anim-part {
+  opacity: 0;
+  fill: none;
+  stroke: #2c3e50;
+  stroke-width: 0.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Eule: Erwach-Animation ──────────────────────────────────────────────── */
+
+/* Original-Flügel und geschlossene Augen sofort ausblenden */
+.rpp-owl-awaken #wing-left,
+.rpp-owl-awaken #wing-right {
+  animation: rppOwlFadeOut 0.3s ease-in forwards;
+}
+
+/* Geschlossene Augen: kurz warten, dann ausblenden, dann Blinzeln beginnt */
+.rpp-owl-awaken #eye-left,
+.rpp-owl-awaken #eye-right {
+  animation: rppOwlEyeClose 2.4s ease-in-out forwards;
+}
+
+@keyframes rppOwlFadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes rppOwlEyeClose {
+  0%   { opacity: 1; }   /* sichtbar zu Beginn */
+  12%  { opacity: 0; }   /* ausgeblendet bevor Blinzeln startet */
+  100% { opacity: 0; }   /* bleibt weg */
+}
+
+/* Gespreizte Flügel flattern */
+.rpp-owl-awaken #end-state-wing-left {
+  animation: rppOwlWingLeft 2.4s ease-in-out forwards;
+}
+.rpp-owl-awaken #end-state-wing-right {
+  animation: rppOwlWingRight 2.4s ease-in-out forwards;
+}
+
+@keyframes rppOwlWingLeft {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; transform: rotate(0deg);   transform-origin: 33px 41px; }
+  25%  { opacity: 1; transform: rotate(-12deg);  transform-origin: 33px 41px; }
+  40%  { opacity: 1; transform: rotate(4deg);   transform-origin: 33px 41px; }
+  55%  { opacity: 1; transform: rotate(-10deg);  transform-origin: 33px 41px; }
+  70%  { opacity: 1; transform: rotate(2deg);   transform-origin: 33px 41px; }
+  85%  { opacity: 1; transform: rotate(-6deg);   transform-origin: 33px 41px; }
+  100% { opacity: 1; transform: rotate(0deg);   transform-origin: 33px 41px; }
+}
+
+@keyframes rppOwlWingRight {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; transform: rotate(0deg);  transform-origin: 66px 40px; }
+  25%  { opacity: 1; transform: rotate(12deg);  transform-origin: 66px 40px; }
+  40%  { opacity: 1; transform: rotate(-4deg); transform-origin: 66px 40px; }
+  55%  { opacity: 1; transform: rotate(10deg);  transform-origin: 66px 40px; }
+  70%  { opacity: 1; transform: rotate(-2deg); transform-origin: 66px 40px; }
+  85%  { opacity: 1; transform: rotate(6deg);  transform-origin: 66px 40px; }
+  100% { opacity: 1; transform: rotate(0deg);  transform-origin: 66px 40px; }
+}
+
+/* Augen öffnen sich einmal sanft und bleiben offen */
+.rpp-owl-awaken #end-state-eye-left,
+.rpp-owl-awaken #end-state-eye-right {
+  animation: rppOwlEyeOpen 2.4s ease-in-out forwards;
+}
+
+@keyframes rppOwlEyeOpen {
+  0%   { opacity: 0; }
+  15%  { opacity: 0; }   /* warten bis geschlossene Augen weg sind */
+  35%  { opacity: 1; }   /* sanft einblenden — bleiben offen */
+  100% { opacity: 1; }
+}
+
+/* Federn oben am Ende einblenden */
+.rpp-owl-awaken #end-state-feathers-top {
+  animation: rppOwlFeathers 2.4s ease-in-out forwards;
+}
+
+@keyframes rppOwlFeathers {
+  0%   { opacity: 0; }
+  75%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ── Schmetterling: Animation ───────────────────────────────────────────── */
+
+/* Gleiche Stroke-Breite wie Eule (100×100 ViewBox) */
+.rpp-svg[viewBox="0 0 100 100"] .rpp-part,
+.rpp-svg[viewBox="0 0 100 100"] .rpp-anim-part {
+  stroke-width: 0.7;
+}
+
+/* Schmetterling davonfliegen + Augen erscheinen */
+.rpp-butterfly-awaken .rpp-svg {
+  animation: rppButterflyFly 2.8s ease-in-out forwards;
+}
+
+.rpp-butterfly-awaken #eyes {
+  animation: rppButterflyEyes 2.8s ease-in-out forwards;
+}
+
+@keyframes rppButterflyFly {
+  0%   { transform: translateY(0) rotate(0deg)   scale(1);    opacity: 1; }
+  15%  { transform: translateY(-8px) rotate(-5deg) scale(1.05); opacity: 1; }
+  35%  { transform: translateY(-4px) rotate(3deg)  scale(0.98); opacity: 1; }
+  100% { transform: translateY(-300px) rotate(-10deg) scale(0.4); opacity: 0; }
+}
+
+@keyframes rppButterflyEyes {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ── Eistüte: Animation ─────────────────────────────────────────────────── */
+
+/* Schirm erscheint, dann Kirsche fällt von oben */
+/* transform-box: view-box → 1% = 1 SVG-Einheit im 100×100-ViewBox.
+   Zielposition = Original-SVG-translate(2.2173635, 6.3986775).
+   Start: 8 SVG-Einheiten über dem Ziel → Y = 6.3986775 - 8 = -1.6013225 */
+.rpp-icecream-awaken #end-state-parasol {
+  transform-box: view-box;
+  transform-origin: 0 0;
+  animation: rppParasolAppear 2.4s ease-out forwards;
+}
+
+.rpp-icecream-awaken #end-state-cherry {
+  animation: rppCherryFall 2.4s ease-in-out forwards;
+}
+
+@keyframes rppParasolAppear {
+  0%   { opacity: 0; transform: translate(2.2173635%, -1.6013225%); }
+  25%  { opacity: 0; transform: translate(2.2173635%, -1.6013225%); }
+  50%  { opacity: 1; transform: translate(2.2173635%, 6.3986775%); }
+  100% { opacity: 1; transform: translate(2.2173635%, 6.3986775%); }
+}
+
+@keyframes rppCherryFall {
+  0%   { opacity: 0; transform: translateY(-30px); }
+  45%  { opacity: 0; transform: translateY(-30px); }
+  65%  { opacity: 1; transform: translateY(3px); }
+  75%  { opacity: 1; transform: translateY(-1px); }
+  85%  { opacity: 1; transform: translateY(1px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
